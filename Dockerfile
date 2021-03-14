@@ -1,4 +1,6 @@
-FROM node:lts-alpine
+FROM --platform=$TARGETPLATFORM node:lts-alpine AS builder
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
 
 WORKDIR /app
 COPY . /app
